@@ -1,28 +1,31 @@
 const solution = (list) => {
+  /* This function takes a list of ordered integers as parameter and returns the all the sequential numbers in range in a string 
+  E.g. the list [-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]  would return as "-6,-3-1,3-5,7-11,14,15,17-20" */
+
   let listRange = [];
   let currentInitRange;
   let currentEngRange;
-  let inRange = false;
+  let runningRange = false;
 
   for (let i = 0; i < list.length; i++) {
-    // Loops through the current item plus the next 2 and compare to see if they are sequential.
+    // Checks the current item plus the next 2 and compare to see if they are sequential.
     if (list[i] === list[i + 1] - 1 && list[i + 1] - 1 === list[i + 2] - 2) {
       // Check if it is a running range or an initial range.
-      // If its an initial range (inRange === false) it sets inRange to 'true' and assign the initRange and endRange
-      if (inRange === false) {
+      // If its an initial range (runningRange === false) it sets runningRange to 'true' and assign the initRange and endRange
+      if (runningRange === false) {
         currentInitRange = list[i];
         currentEngRange = list[i + 2];
-        inRange = true;
-        // If its a running range (inRange === true) it sets only the endRange
+        runningRange = true;
+        // If its a running range (runningRange === true) it sets only the endRange
       } else {
         currentEngRange = list[i + 2];
       }
-      // Checks if the last iteration was a part of a running range (inRange === true)
-      /* If yes, it changes ends the running range, 
+      // Checks if the last iteration was a part of a running range (runningRange === true)
+      /* If yes, it chages runningRange to 'false', 
          advances the index for the next iteration by one (leaving the other increase for the for loop itself to change) 
         and push the numbers found in a range to listRange */
-    } else if (inRange === true) {
-      inRange = false;
+    } else if (runningRange === true) {
+      runningRange = false;
       i += 1;
       listRange.push(`${currentInitRange}-${currentEngRange}`);
       // If not, only pushes the current number to listRange
