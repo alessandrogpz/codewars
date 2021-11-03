@@ -1,8 +1,8 @@
 These are my solutions to [codewars](http://codewars.com) [code katas](https://en.wikipedia.org/wiki/Kata_(programming)). My profile in codewars can be found [here](https://www.codewars.com/users/Alessandro%20Perez). Languages used here are (at the moment):
 
-*Python
-*JavaScript
-*C++
+* Python
+* JavaScript
+* C++
 
 **IMPORTANT NOTE:**
 
