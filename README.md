@@ -14,4 +14,6 @@ this repo includes my own solutions and just posting them helps me keep the pace
 
 Thank you!
 
+This is my Codewarrior Profile Badge, current status:
+
 ![Codewarrior Profile Badge](https://www.codewars.com/users/Alessandro%20Perez/badges/large)
